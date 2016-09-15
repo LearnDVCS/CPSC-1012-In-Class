@@ -31,14 +31,44 @@ namespace ABCs.Examples
             Greeter walmartGreeter;
             // Create the Greeter object and assign it to the variable
             walmartGreeter = new Greeter("Welcome to Walmart!", "Thank you for shopping at Walmart! Come again!!");
-            Console.WriteLine(walmartGreeter.SayHello());
-            Console.WriteLine(walmartGreeter.SayGoodbye());
+            //Console.WriteLine(walmartGreeter.SayHello());
+            //Console.WriteLine(walmartGreeter.SayGoodbye());
+            UseGreeter(walmartGreeter);
 
             Greeter klingonCommander;
             klingonCommander = new Greeter("nuqneH!", "Qapla'!");
-            Console.WriteLine(klingonCommander.SayHello());
-            Console.WriteLine(klingonCommander.SayGoodbye());
+            //Console.WriteLine(klingonCommander.SayHello());
+            //Console.WriteLine(klingonCommander.SayGoodbye());
+            UseGreeter(klingonCommander);
 
+            // Get some user input for creating our next Greeter object
+            Console.WriteLine(); // put in a blank line on the screen
+            string helloMsg, goodbyeMsg;
+            // Prompt for and get user input
+            Console.Write("Enter a hello message: ");
+            helloMsg = Console.ReadLine();
+            Console.Write("Enter a goodbye message: ");
+            goodbyeMsg = Console.ReadLine();
+            // Make my Greeter object
+            Greeter myGreeter = new Greeter(helloMsg, goodbyeMsg);
+            UseGreeter(myGreeter);
+
+            // Get a number from the user
+            Console.WriteLine("\n\n\n"); // notice the escape characters
+            Console.Write("\tEnter a mark between 0 and 100 that you want to get for this course: ");
+            int preferredMark;
+            preferredMark = int.Parse(Console.ReadLine());
+            Console.WriteLine("Great choice! Go for it!!");
+
+        } // end of Main() method
+
+        // This is private just because I don't want it called from outside my
+        // Program class (which is acting as a "driver" for my program).
+        // The void return type means that this method will NOT return any information.
+        private static void UseGreeter(Greeter someone)
+        {
+            Console.WriteLine(someone.SayHello());
+            Console.WriteLine(someone.SayGoodbye());
         }
     }
 }
