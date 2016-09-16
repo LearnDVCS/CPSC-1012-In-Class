@@ -10,6 +10,40 @@ namespace ABCs.Examples
     {
         static void Main(string[] args)
         {
+            DemoDriver2();
+            // DemoDriver1();
+        } // end of Main() method
+
+        /// <summary>
+        /// Demo of using the Person class which will have private fields
+        /// and public properties.
+        /// </summary>
+        private static void DemoDriver2()
+        {
+            // The Person class does NOT have any constructors defined
+            Person me = new Person(); // Notice that I call a constructor..
+            // Whenever a class does not define a constructor, then the
+            // compiler generates what is called a "Default Constructor"
+            // Let's set the data for me :)
+            me.FirstName = "Dan";
+            me.LastName = "Gilleland";
+            me.Age = 52;
+
+            // Being a federal witness has necessitated that I change my
+            // last name.
+            Console.WriteLine("Hello " + me.FullName);
+            Console.WriteLine("We want to protect your life.");
+            Console.Write("Enter a new last name: ");
+            me.LastName = Console.ReadLine();
+            Console.WriteLine("Here is your new identity:");
+            Console.WriteLine("\t" + me.FullName);
+        }
+
+        /// <summary>
+        /// Quick 'n Dirty demo of variables, objects, and User Input/Output
+        /// </summary>
+        private static void DemoDriver1()
+        {
             // Declaring a variable will give me a "place" to hold information
             int myAge = 32; // Variable Initialization statement
             int averageClassAge; // Variable Declaration statement
@@ -22,7 +56,7 @@ namespace ABCs.Examples
             Console.WriteLine("Max int value is: " + int.MaxValue);
             Console.WriteLine("Min int value is: " + int.MinValue);
 
-            long totalDistinctValues = (long) int.MaxValue - int.MinValue;
+            long totalDistinctValues = (long)int.MaxValue - int.MinValue;
             Console.WriteLine("There are " + totalDistinctValues + " total distinct values that an integer can hold.");
 
 
@@ -59,8 +93,7 @@ namespace ABCs.Examples
             int preferredMark;
             preferredMark = int.Parse(Console.ReadLine());
             Console.WriteLine("Great choice! Go for it!!");
-
-        } // end of Main() method
+        }
 
         // This is private just because I don't want it called from outside my
         // Program class (which is acting as a "driver" for my program).
