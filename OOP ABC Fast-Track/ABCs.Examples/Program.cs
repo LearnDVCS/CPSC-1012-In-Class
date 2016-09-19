@@ -10,8 +10,36 @@ namespace ABCs.Examples
     {
         static void Main(string[] args)
         {
-            DemoDriver1();
+            DemoDriver2();
+            //DemoDriver1();
         } // end of Main() method
+
+        /// <summary>
+        /// Demo of using the Person class which will have
+        /// private fields and public properties
+        /// </summary>
+        private static void DemoDriver2()
+        {
+            // The Person class does NOT have any constructors defined.
+            Person me = new Person(); // Notice that I call a constructor.
+            // Whenever a class does not define a constructor, then the
+            // compiler generates what is called a "Default Constructor"
+
+            // Let's set the data for me :)
+            me.FirstName = "Dan";
+            me.LastName = "Gilleland";
+            me.Age = 52;
+
+            // Being a federal witness has necessitated that I change my
+            // last name.
+            Console.WriteLine("Hello " + me.FullName);
+            Console.WriteLine("We want to protect your life.");
+            Console.Write("Enter a new last name: ");
+            me.LastName = Console.ReadLine();
+
+            Console.WriteLine("Here is your new identity:");
+            Console.WriteLine("\t" + me.FullName);
+        }
 
         /// <summary>
         /// Quick 'n Dirty demo of variables, objects and User Input/Output
