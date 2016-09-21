@@ -10,6 +10,14 @@ namespace Expressions
         // The following is an "auto-implemented" property
         public double Diameter { get; set; } // let the compiler put in a backing store
 
+        public double Radius { get { return Diameter / 2; } }
+        //        *                          double   int
+
+        public double Circumference { get { return Diameter * PI; } }
+        //                                         instance  static
+
+        public double Area { get { return PI * Radius * Radius; } }
+
         // Constructor
         public Circle(double diameter)
         {

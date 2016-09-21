@@ -12,17 +12,22 @@ namespace Expressions
         {
             //DemoCalculator();
             //DemoSquare();
+            DemoCircle();
+        }
 
-            // Demo Circle
+        private static void DemoCircle()
+        {
             double diameter;
             Console.WriteLine("Enter a diameter for a circle: ");
             diameter = double.Parse(Console.ReadLine());
 
             Circle ball = new Circle(diameter);
 
-            double circumference = Circle.PI * ball.Diameter;
+            //double circumference = Circle.PI * ball.Diameter;
 
-            Console.WriteLine($"The circumference is {circumference}");
+            Console.WriteLine($"The circumference is {ball.Circumference}");
+            Console.WriteLine($"The radius is {ball.Radius}");
+            Console.WriteLine($"The area is {ball.Area}");
 
             // 1) Add properties called Radius, Circumference and Area
             //    that calculate their values based on the circle's diameter
