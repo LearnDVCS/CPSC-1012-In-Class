@@ -11,7 +11,46 @@ namespace Expressions
         static void Main(string[] args)
         {
             // DemoCalculator();
-            DemoSquare();
+            // DemoSquare();
+            // DemoStaticVsNonStatic();
+            DemoCircle();
+        }
+
+        private static void DemoCircle()
+        {
+            /* Test Data
+             * Diameter | Area  | Radius | Circumference
+             * =========|=======|========|==============
+             *     2    |3.14159|    1   | 6.28318
+             */
+            double diameter;
+            Console.Write("Enter a diameter for a circle: ");
+            diameter = double.Parse(Console.ReadLine());
+
+            Circle ball = new Circle(diameter);
+
+            Console.WriteLine($"The circumference is {ball.Circumference}");
+            Console.WriteLine($"The radius is {ball.Radius}");
+            Console.WriteLine($"The area is {ball.Area}");
+        }
+
+        private static void DemoStaticVsNonStatic()
+        {
+            Circle smallBall = new Circle();
+            smallBall.Diameter = 1;
+
+            double circumference = Circle.PI * smallBall.Diameter;
+            string message;
+            message = $"A ball of diameter {smallBall.Diameter} has a circumference of {circumference}";
+            Console.WriteLine(message);
+
+            Circle bigBall = new Circle();
+            bigBall.Diameter = 100;
+
+            circumference = Circle.PI * bigBall.Diameter;
+            message = $"A ball of diameter {bigBall.Diameter} has a circumference of {circumference}";
+            Console.WriteLine(message);
+
         }
 
         private static void DemoSquare()
