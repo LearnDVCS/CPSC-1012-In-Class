@@ -12,7 +12,48 @@ namespace Expressions
         {
             //DemoCalculator();
             //DemoSquare();
-            DemoCircle();
+            // DemoCircle();
+            // DemoDie();
+            //DemoFraction();
+            DemoAngle();
+        }
+
+        private static void DemoAngle()
+        {
+            Angle right = new Angle(90);
+            Console.WriteLine($"An angle of {right} is the same as {right.Raidans} radians.");
+        }
+
+        private static void DemoFraction()
+        {
+            Fraction data = new Fraction(4,15);
+            // If I place an object in my string interpolation,
+            // then the .ToString() method will be called on that object.
+            Console.WriteLine($"We are {data} of the way through this course");
+
+            Fraction mark = new Fraction(4, 5);
+            Console.WriteLine($"I got {mark} which is {mark.ToPercent()}%");
+        }
+
+        private static void DemoDie()
+        {
+            Die first, second, third, fourth, fifth;
+            first = new Die();
+            second = new Die();
+            third = new Die();
+            fourth = new Die();
+            fifth = new Die();
+
+            Console.WriteLine("The die values are:");
+            string message = $"\t{first.FaceValue}\t{second.FaceValue}\t{third.FaceValue}\t{fourth.FaceValue}\t{fifth.FaceValue}";
+            Console.WriteLine(message);
+
+            // Reroll the first and second die.
+            first.Roll();
+            second.Roll();
+            Console.WriteLine("\nAfter re-rolling the first two die:");
+            message = $"\t{first.FaceValue}\t{second.FaceValue}\t{third.FaceValue}\t{fourth.FaceValue}\t{fifth.FaceValue}";
+            Console.WriteLine(message);
         }
 
         private static void DemoCircle()
