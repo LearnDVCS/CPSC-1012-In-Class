@@ -15,7 +15,7 @@ namespace Expressions
             // DemoStaticVsNonStatic();
             // DemoCircle();
             // DemoDie();
-            //DemoAngle();
+            // DemoAngle();
             DemoFraction();
         }
 
@@ -40,10 +40,11 @@ namespace Expressions
             Angle right = new Angle(90);
             //Console.WriteLine(right.ToString());
             Console.WriteLine($"A {right} angle is {right.Radians} Radians and {right.Grads} Grads");
-            //Console.Write("I just ");
-            //Console.OutputEncoding = UTF8Encoding.UTF8;
-            //Console.Write("LOVE"); // TODO: Console.Write('\u2661');
-            //Console.WriteLine(" Programming");
+            Console.Write("I just ");
+            Console.Write("LOVE"); // TODO: 
+            Console.OutputEncoding = UTF8Encoding.UTF8;
+            Console.Write("♥"); // [Alt] + [num-3]
+            Console.WriteLine(" Programming");
         }
 
         private static void DemoDie()
