@@ -13,7 +13,60 @@ namespace Expressions
             // DemoCalculator();
             // DemoSquare();
             // DemoStaticVsNonStatic();
-            DemoCircle();
+            // DemoCircle();
+            // DemoDie();
+            //DemoAngle();
+            DemoFraction();
+        }
+
+        private static void DemoFraction()
+        {
+            Fraction data = new Fraction(4, 15);
+            // If I place an object in my string interpolation,
+            // then the .ToString() method will be called on that object.
+            Console.WriteLine($"We are {data} of the way through this course.");
+
+            Fraction mark = new Fraction(4, 5);
+            Console.WriteLine($"My mark was {mark} which is {mark.ToPercent()} %.");
+
+            data = new Fraction(4, 6);
+            Console.WriteLine($"The reciprocal of {data} is {data.Reciprocal}");
+        }
+
+        private static void DemoAngle()
+        {
+            Console.WriteLine(5 + 1);
+            Console.WriteLine(5.ToString() + 1.ToString());
+            Angle right = new Angle(90);
+            //Console.WriteLine(right.ToString());
+            Console.WriteLine($"A {right} angle is {right.Radians} Radians and {right.Grads} Grads");
+            //Console.Write("I just ");
+            //Console.OutputEncoding = UTF8Encoding.UTF8;
+            //Console.Write("LOVE"); // TODO: Console.Write('\u2661');
+            //Console.WriteLine(" Programming");
+        }
+
+        private static void DemoDie()
+        {
+            Die first, second, third, fourth, fifth;
+            first = new Die();
+            second = new Die();
+            third = new Die();
+            fourth = new Die();
+            fifth = new Die();
+
+            Console.WriteLine("The initial die values are:");
+            string message = $"\t{first.FaceValue}\t{second.FaceValue}\t{third.FaceValue}\t{fourth.FaceValue}\t{fifth.FaceValue}";
+
+            Console.WriteLine(message);
+
+            // Reroll the first and second die
+            first.Roll();
+            second.Roll();
+            Console.WriteLine("\nAfter re-rolling the first two die:");
+            message = $"\t{first.FaceValue}\t{second.FaceValue}\t{third.FaceValue}\t{fourth.FaceValue}\t{fifth.FaceValue}";
+
+            Console.WriteLine(message);
         }
 
         private static void DemoCircle()
