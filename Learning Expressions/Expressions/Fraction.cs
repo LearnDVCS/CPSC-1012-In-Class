@@ -37,5 +37,34 @@
         {
             return ToDouble() * 100.0;
         }
+
+        public void MultiplyBy(Fraction otherFraction)
+        {
+            this.Numerator = this.Numerator * otherFraction.Numerator;
+            this.Denominator = this.Denominator * otherFraction.Denominator;
+        }
+
+        public void DivideBy(Fraction other)
+        {
+            // The following is how we would mechanically divide two fractions
+            Numerator = Numerator * other.Denominator;
+            Denominator = Denominator * other.Numerator;
+
+            // That's just the same as multiplying by the reciprocal... hmmm.
+        }
+
+        public void Add(Fraction other)
+        {
+            Numerator = (Numerator * other.Denominator)
+                      + (other.Numerator * Denominator);
+            Denominator = Denominator * other.Denominator;
+        }
+
+        public void Subtract(Fraction other)
+        {
+            Numerator = (Numerator * other.Denominator)
+                      - (other.Numerator * Denominator);
+            Denominator = Denominator * other.Denominator;
+        }
     }
 }

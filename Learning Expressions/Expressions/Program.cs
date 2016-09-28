@@ -15,7 +15,16 @@ namespace Expressions
             // DemoCircle();
             // DemoDie();
             //DemoFraction();
-            DemoAngle();
+            //DemoAngle();
+            DemoBetterFraction();
+        }
+
+        private static void DemoBetterFraction()
+        {
+            Fraction first = new Fraction(1, 2);
+            Fraction second = new Fraction(3, 4);
+            first.MultiplyBy(second);
+            Console.WriteLine("The answer is: " + first);
         }
 
         private static void DemoAngle()
