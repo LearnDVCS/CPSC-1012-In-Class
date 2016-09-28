@@ -11,6 +11,31 @@
         {
             Numerator = numerator;
             Denominator = denominator;
+            FixSign();
+        }
+
+        // Property
+        public bool IsProper
+        {
+            get
+            {
+                bool proper;
+                if (Numerator < Denominator)
+                    proper = true;
+                else
+                    proper = false;
+                return proper;
+            }
+        }
+
+        // Private method to fix the sign.
+        private void FixSign()
+        {
+            if(Denominator < 0)
+            {
+                Numerator *= -1; // same as Numerator = Numerator * -1;
+                Denominator *= -1;
+            }
         }
 
         // Property

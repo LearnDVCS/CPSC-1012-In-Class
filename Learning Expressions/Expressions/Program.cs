@@ -16,7 +16,20 @@ namespace Expressions
             // DemoDie();
             //DemoFraction();
             //DemoAngle();
-            DemoBetterFraction();
+            //DemoBetterFraction();
+            DemoStillBetterFraction();
+
+        }
+
+
+        private static void DemoStillBetterFraction()
+        {
+            Fraction first = new Fraction(3, -9);
+            Console.WriteLine("3 / -9   is   " + first);
+            Fraction second = new Fraction(-4, -5);
+            Console.WriteLine("-4/-5    is   " + second);
+
+            // Now, test for a fraction that is proper and one that is improper.
         }
 
         private static void DemoBetterFraction()
