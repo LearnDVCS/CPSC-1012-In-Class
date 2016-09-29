@@ -16,7 +16,33 @@
         {
             Numerator = numerator;
             Denominator = denominator;
+            FixSign();
         }
+
+        private void FixSign()
+        {
+            if(Denominator < 0)
+            {
+                Denominator *= -1; // same as Denominator = Demonator * -1;
+                Numerator *= -1;
+            }
+        }
+
+        // Property that identifies if this fraction is proper or not
+        public bool IsProper
+        {
+            get
+            {
+                bool proper;
+                if (Numerator < Denominator)
+                    proper = true;
+                else
+                    proper = false;
+
+                return proper;
+            }
+        }
+
 
         // Method - specifically, I will override (change) the default
         //          behaviour of the ToString() method
