@@ -15,17 +15,26 @@ namespace Expressions
         public Die()
         {
             // TODO: set up the side of the die that is the face showing value
+            Sides = 6; // a common six-sided die
+            Roll();
+        }
+
+        // An overloaded constructor
+        public Die(int numberOfSides)
+        {
+            Sides = numberOfSides;
             Roll();
         }
 
         // Property
         public int FaceValue { get; private set; }
+        public int Sides { get; private set; }
 
         // Method
         public void Roll()
         {
-            // Get a random value greater than or equal to 1 and less than 7
-            FaceValue = _rnd.Next(1, 7);
+            // Get a random value greater than or equal to 1 & less than Sides + 1
+            FaceValue = _rnd.Next(1, Sides + 1);
         }
 
     }

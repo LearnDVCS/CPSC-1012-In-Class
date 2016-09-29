@@ -17,7 +17,15 @@ namespace Expressions
             // DemoDie();
             // DemoAngle();
             // DemoFraction();
-            DemoBetterFraction();
+            // DemoBetterFraction();
+            DemoBetterDie();
+        }
+
+        private static void DemoBetterDie()
+        {
+            Die regular = new Die();
+            Die fancy = new Die(20);
+            Console.WriteLine($"My regular die shows {regular.FaceValue} and my fancy die shows {fancy.FaceValue}");
         }
 
         private static void DemoBetterFraction()
