@@ -16,7 +16,23 @@ namespace Expressions
             // DemoCircle();
             // DemoDie();
             // DemoAngle();
-            DemoFraction();
+            // DemoFraction();
+            DemoBetterFraction();
+        }
+
+        private static void DemoBetterFraction()
+        {
+            Fraction first = new Fraction(1, 2);
+            Fraction second = new Fraction(3, 4);
+            Console.Write($"{first} X {second} = ");
+            first.MultiplyBy(second); // now, my first object's data will change
+            Console.WriteLine(first);
+            // Test my Add method
+            first = new Fraction(2, 3);
+            second = new Fraction(4, 5);
+            Console.Write($"{first}  +  {second}  =  ");
+            first.Add(second);
+            Console.WriteLine(first);
         }
 
         private static void DemoFraction()

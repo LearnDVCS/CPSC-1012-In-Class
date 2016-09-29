@@ -35,5 +35,37 @@
         {
             return ToDouble() * 100.0;
         }
+
+        public void MultiplyBy(Fraction otherFraction)
+        {
+            this.Numerator = this.Numerator * otherFraction.Numerator;
+            this.Denominator = this.Denominator * otherFraction.Denominator;
+        }
+
+        public void DivideBy(Fraction other)
+        {
+            // Multiply this numerator against the other denominator, and vice-versa
+            Numerator = Numerator * other.Denominator;
+            Denominator = Denominator * other.Numerator;
+        }
+
+        public void Add(Fraction other)
+        {
+            // Order matters! I have to calculate the new value for the
+            // numerator before I do the new value for the denominator.
+            // Why? Because if I change the denominator value first,
+            // then it will "contaminate" the results of calculating
+            // the new numerator.
+            Numerator = other.Denominator * Numerator
+                      + other.Numerator * Denominator;
+            Denominator = Denominator * other.Denominator;
+        }
+
+        public void Subtract(Fraction other)
+        {
+            Numerator = other.Denominator * Numerator
+                      - other.Numerator * Denominator;
+            Denominator = Denominator * other.Denominator;
+        }
     }
 }
