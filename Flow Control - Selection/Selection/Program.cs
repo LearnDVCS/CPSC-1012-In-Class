@@ -10,23 +10,22 @@ namespace Selection
     {
         static void Main(string[] args)
         {
-            // Use a menu for which demo to show
-            Console.WriteLine("Select a demo from the following:");
-            Console.WriteLine("A)\tBase 10 to Base 16");
-            Console.WriteLine("B)\tMemory Address Demo");
-            Console.WriteLine("C)\tColor Demo");
-
             string userOption;
-            Console.Write("Enter your selection: ");
-            userOption = Console.ReadLine().ToUpper();
 
-            //if (userOption == "A")
-            //    DemoBaseConversion();
-            //if (userOption == "B")
-            //    DemoMemoryAddress();
-            //if (userOption == "C")
-            //    DemoColor();
-            switch(userOption)
+            do
+            {
+                DisplayMenu();
+
+                Console.Write("Enter your selection: ");
+                userOption = Console.ReadLine().ToUpper();
+
+                ShowDemo(userOption);
+            } while (userOption != "X");
+        }
+
+        private static void ShowDemo(string userOption)
+        {
+            switch (userOption)
             {
                 case "A":
                     DemoBaseConversion();
@@ -37,10 +36,23 @@ namespace Selection
                 case "C":
                     DemoColor();
                     break;
+                case "X":
+                    Console.WriteLine("Thanks for running the demos.");
+                    break;
                 default:
                     Console.WriteLine("Invalid menu selection.");
                     break;
             }
+        }
+
+        private static void DisplayMenu()
+        {
+            // Use a menu for which demo to show
+            Console.WriteLine("Select a demo from the following:");
+            Console.WriteLine("A)\tBase 10 to Base 16");
+            Console.WriteLine("B)\tMemory Address Demo");
+            Console.WriteLine("C)\tColor Demo");
+            Console.WriteLine("X)\tExit");
         }
 
         private static void DemoColor()
