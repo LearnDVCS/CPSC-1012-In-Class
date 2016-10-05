@@ -56,22 +56,33 @@
         private string ToHexDigit(int number)
         {
             string result;
-            if (number < 10)
-                result = number.ToString();
-            else if (number == 10)
-                result = "A";
-            else if (number == 11)
-                result = "B";
-            else if (number == 12)
-                result = "C";
-            else if (number == 13)
-                result = "D";
-            else if (number == 14)
-                result = "E";
-            else if (number == 15)
-                result = "F";
-            else
-                result = "";
+            switch(number)
+            {
+                case 10:
+                    result = "A";
+                    break;
+                case 11:
+                    result = "B";
+                    break;
+                case 12:
+                    result = "C";
+                    break;
+                case 13:
+                    result = "D";
+                    break;
+                case 14:
+                    result = "E";
+                    break;
+                case 15:
+                    result = "F";
+                    break;
+                default:
+                    if (number < 10)
+                        result = number.ToString();
+                    else
+                        result = "";
+                    break;
+            }
             return result;
         }
         #endregion

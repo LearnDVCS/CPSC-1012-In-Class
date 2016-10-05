@@ -20,12 +20,27 @@ namespace Selection
             Console.Write("Enter your selection: ");
             userOption = Console.ReadLine().ToUpper();
 
-            if (userOption == "A")
-                DemoBaseConversion();
-            if (userOption == "B")
-                DemoMemoryAddress();
-            if (userOption == "C")
-                DemoColor();
+            //if (userOption == "A")
+            //    DemoBaseConversion();
+            //if (userOption == "B")
+            //    DemoMemoryAddress();
+            //if (userOption == "C")
+            //    DemoColor();
+            switch(userOption)
+            {
+                case "A":
+                    DemoBaseConversion();
+                    break;
+                case "B":
+                    DemoMemoryAddress();
+                    break;
+                case "C":
+                    DemoColor();
+                    break;
+                default:
+                    Console.WriteLine("Invalid menu selection.");
+                    break;
+            }
         }
 
         private static void DemoColor()
