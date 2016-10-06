@@ -8,28 +8,56 @@ namespace FlowControl
         {
             string userOption;
 
+            do
+            {
+                DisplayMenu();
+
+                // Get user's choice
+                userOption = Console.ReadLine().ToUpper();
+                //           \      string    /
+
+                ShowDemo(userOption);
+            } while (userOption != "X");
+        }
+
+        private static void ShowDemo(string userOption)
+        {
+            // Show the appropriate demo
+            switch (userOption)
+            {
+                case "A":
+                    DemoBaseConversion();
+                    break;
+                case "B":
+                    DemoMemoryAddress();
+                    break;
+                case "C":
+                    DemoColor();
+                    break;
+                case "X":
+                    Console.WriteLine("Thanks for trying the demos.");
+                    break;
+                default:
+                    Console.WriteLine("Invalid menu item");
+                    break;
+            }
+        }
+
+        private static void DisplayMenu()
+        {
             // Show a menu for which demo to run
             Console.WriteLine("Select a demo from the following:");
             Console.WriteLine("A)  Base 10 to Base 16");
             Console.WriteLine("B)  Memory Address Demo");
             Console.WriteLine("C)  Color Demo");
-
-            // Get user's choice
-            userOption = Console.ReadLine().ToUpper();
-            //           \      string    /
-
-            // Show the appropriate demo
-            if (userOption == "A")
-                DemoBaseConversion();
-            if (userOption == "B")
-                DemoMemoryAddress();
-            if (userOption == "C")
-                DemoColor();
+            Console.WriteLine("X)  Exit");
         }
 
         private static void DemoColor()
         {
-            throw new NotImplementedException();
+            Console.WriteLine("\nColor Demo\n");
+            Color white = new Color(255, 255, 255);
+            Console.WriteLine($"White is {white.Hex} where Red = {white.Red}, Blue = {white.Blue} and Green = {white.Green}");
         }
 
         private static void DemoMemoryAddress()

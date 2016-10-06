@@ -39,22 +39,33 @@
         private static string GetHexDigit(int wholePortion)
         {
             string hex;
-            if (wholePortion <= 9)
-                hex = wholePortion.ToString();
-            else if (wholePortion == 10)
-                hex = "A";
-            else if (wholePortion == 11)
-                hex = "B";
-            else if (wholePortion == 12)
-                hex = "C";
-            else if (wholePortion == 13)
-                hex = "D";
-            else if (wholePortion == 14)
-                hex = "E";
-            else if (wholePortion == 15)
-                hex = "F";
-            else
-                hex = ""; // TODO: look for better way to handle invalid digit
+            switch(wholePortion)
+            {
+                case 10:
+                    hex = "A";
+                    break;
+                case 11:
+                    hex = "B";
+                    break;
+                case 12:
+                    hex = "C";
+                    break;
+                case 13:
+                    hex = "D";
+                    break;
+                case 14:
+                    hex = "E";
+                    break;
+                case 15:
+                    hex = "F";
+                    break;
+                default:
+                    if (wholePortion <= 9)
+                        hex = wholePortion.ToString();
+                    else
+                        hex = ""; // TODO: look for better way to handle invalid digit
+                    break;
+            }
 
             return hex;
         }
