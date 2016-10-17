@@ -1,4 +1,5 @@
-﻿namespace Expressions
+﻿using System; // for the Exception class
+namespace Expressions
 {
     public class Fraction
     {
@@ -9,6 +10,9 @@
         // Constructor
         public Fraction(int numerator, int denominator)
         {
+            // TODO: Write a method in Program.cs to test the Fraction
+            if (denominator == 0)
+                throw new Exception("A fraction cannot have a zero denominator");
             Numerator = numerator;
             Denominator = denominator;
             FixSign();

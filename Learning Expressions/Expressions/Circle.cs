@@ -21,6 +21,9 @@ namespace Expressions
         // Constructor
         public Circle(double diameter)
         {
+            // TODO: Test this in the Program.cs (homework)
+            if (diameter <= 0)
+                throw new Exception("Circles must have a diameter greater than zero.");
             Diameter = diameter;
         }
     }

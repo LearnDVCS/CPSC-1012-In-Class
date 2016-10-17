@@ -17,8 +17,18 @@ namespace Expressions
             //DemoFraction();
             //DemoAngle();
             //DemoBetterFraction();
-            DemoStillBetterFraction();
+            //DemoStillBetterFraction();
+            DemoInvalidSquare();
+        }
 
+        private static void DemoInvalidSquare()
+        {
+            Console.WriteLine("Enter a length for the side of a square.");
+            Console.Write("(Hint: try a zero or negative number...): ");
+            double length = double.Parse(Console.ReadLine());
+            Console.WriteLine("Making square of length " + length + "...");
+            Square box = new Square(length);
+            Console.WriteLine($"The area is {box.Area}");
         }
 
 

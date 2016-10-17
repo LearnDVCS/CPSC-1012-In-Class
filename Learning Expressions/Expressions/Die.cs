@@ -17,6 +17,10 @@ namespace Expressions
 
         public Die(int sides)
         {
+            // TODO: Test this in the Program.cs as well
+            // Less than 4 sides and more than 20 sides are not allowed.
+            if (sides < 4 || sides > 20)
+                throw new Exception("Die can only have 4 to 20 sides");
             Sides = sides;
             Roll();
         }

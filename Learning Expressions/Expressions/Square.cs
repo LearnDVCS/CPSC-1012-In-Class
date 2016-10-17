@@ -28,6 +28,8 @@ namespace Expressions
         // Constructor
         public Square(double sideLength)
         {
+            if (sideLength <= 0)
+                throw new Exception("A square must have a length greater than zero.");
             Side = sideLength;
         }
     }
