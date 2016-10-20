@@ -37,6 +37,7 @@ namespace Looping
 
         public static bool IsPerfect(int number)
         {
+            // This logic starts optomistically and then tries to prove the number is not perfect
             bool perfect = true;
             if (number <= 1)
                 perfect = false;
@@ -46,7 +47,7 @@ namespace Looping
                 int halfWay = number / 2;
                 int total = 0;
                 int count = 1;
-                while (total != number && total <= halfWay && total < number)
+                while (total <= halfWay)
                 {
                     if (number % count == 0) // Then count is a factor of number
                         total += count;
