@@ -33,6 +33,22 @@ namespace Looping
                     int fib = MathFormulas.FibonacciNumber(position);
                     Console.WriteLine($"The fibonacci number at {position} is {fib}.");
                     break;
+                case "B":
+                    // Demo IsPerfect by finding the first 5 perfect numbers.
+                    int perfectCount = 0;
+                    int numberToCheck = 1;
+                    while (perfectCount < 5)
+                    {
+                        if(MathFormulas.IsPerfect(numberToCheck))
+                        {
+                            Console.WriteLine($"{numberToCheck} is perfect.");
+                            perfectCount++;
+                        }
+                        numberToCheck++; // move on to the next number.
+                        // TODO: Remove this later...
+                        Console.WriteLine($"\tChecking {numberToCheck}");
+                    }
+                    break;
             }
         }
 

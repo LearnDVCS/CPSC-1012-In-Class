@@ -28,5 +28,33 @@ namespace Looping
                 throw new Exception("Can only create a fibonacci  number based on a positive non-zero position");
             return current;
         }
+
+        public static bool IsPerfect(int number)
+        {
+            // Let's start out optomistically.
+            bool perfect = true;
+
+            // Perfect numbers are always greater than 1
+            if (number <= 1)
+                perfect = false;
+            else
+            {
+                // The following logic attempt to prove it is imperfect
+                int halfway = number / 2;
+                int total = 0;
+                int count = 1;
+
+                while(count <= halfway)
+                {
+                    if (number % count == 0) // then count is a factor of number
+                        total += count;
+                    count++; // increase count by 1
+                }
+                // The number is not perfect if its factors don't total the number
+                if (total != number)
+                    perfect = false;
+            }
+            return perfect;
+        }
     }
 }
