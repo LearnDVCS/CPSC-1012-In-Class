@@ -71,5 +71,22 @@ namespace Looping
             }
             return perfect;
         }
-    }
+
+        public static int Factorial(int number)
+        {
+            // TODO: Use a loop to calculate and return the factorial
+            //       of the number that is passed in to this method.
+            //   - create a variable & give it the value 1 to start
+            int fact = 1;
+            //   - have loop that repeats as long as the number > 1
+            while (number > 1)
+            {
+                //      -> fact = fact * number
+                fact *= number;
+                //      -> number = number - 1
+                number--; // Decrement operator
+            }
+            return fact;
+        }
+    } // end of class
 }

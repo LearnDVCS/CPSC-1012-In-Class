@@ -52,6 +52,41 @@ namespace Looping
                     break;
                 case "D":
                     // TODO: Factorial Demo
+
+                    /* <-- start of multi-line comment
+                    // First way - all inside one spot
+                    //string userInput;
+                    // Ask the user for a number
+                    //   - Display a message
+                    Console.Write("Enter a number: ");
+                    //   - Get the text
+                    string userInput = Console.ReadLine();
+                    //   - Convert the text to a number
+                    int number = int.Parse(userInput);
+                    // Calculate the factorial
+                    //   - create a variable & give it the value 1 to start
+                    int fact = 1;
+                    //   - have loop that repeats as long as the number > 1
+                    while (number > 1)
+                    {
+                        //      -> fact = fact * number
+                        fact *= number;
+                        //      -> number = number - 1
+                        number--; // Decrement operator
+                    }
+                    // Display the factorial value
+                    Console.WriteLine("The factorial is " + fact);
+                    end my multline comment -> */
+
+                    // Second way - putting the calculation logic inside of the MathFormula class
+                    // Interact with user
+                    Console.Write("Enter a number: ");
+                    int num = int.Parse(Console.ReadLine());
+                    // Use my MathFormula class to do the calculations
+                    int result = MathFormulas.Factorial(num);
+                    Console.WriteLine("The factorial of {0} is {1}",
+                                      num,
+                                      result);
                     break;
                 case "E":
                 {
