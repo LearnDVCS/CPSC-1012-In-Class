@@ -27,6 +27,7 @@ namespace Looping
             Console.WriteLine();
             Console.WriteLine("A) MathFormulas.Fibonacci");
             Console.WriteLine("B) MathFormulas.IsPerfect");
+            Console.WriteLine("C) MathFormulas.Factorial");
             // Others...
             Console.WriteLine("X) Exit");
             Console.Write("\tSelect an item from the menu: ");
@@ -37,14 +38,68 @@ namespace Looping
             switch(option)
             {
                 case "A":
-                    int position;
-                    Console.Write("Enter a position in the sequence: ");
-                    position = int.Parse(Console.ReadLine());
-                    int fib = MathFormulas.FibonacciNumber(position);
-                    Console.WriteLine($"The fibonacci number at {position} is {fib}.");
-
+                    DemoFibonacci();
+                    break;
+                case "B":
+                    DemoIsPerfect();
+                    break;
+                case "C":
+                    DemoFactorial();
                     break;
             }
+        }
+
+        private static void DemoFactorial()
+        {
+            // Ask for a number
+            Console.Write("Enter a number: ");
+            // Get the number
+            int number = int.Parse(Console.ReadLine()); // convert text to int
+            // Calculate Factorial
+            //   - factorial = number
+            int factorial = number;
+            //   - number = number - 1
+            number--;
+            //   - As long as number is > 1...
+            while (number > 1)
+            {
+                //      - factorial = factorial * number
+                factorial *= number;
+                //      - number = number - 1
+                number--;
+            }
+
+            // Display my result
+            Console.WriteLine($"The factorial is {factorial}");
+        }
+
+        private static void DemoIsPerfect()
+        {
+            // Show the first five perfect numbers :)
+            Console.WriteLine("Here are the first 5 perfect numbers:");
+            int perfectCount = 1;
+            int numberToCheck = 1;
+            while(perfectCount <= 5)
+            {
+                if (MathFormulas.IsPerfect(numberToCheck))
+                {
+                    Console.WriteLine($"{numberToCheck} is perfect.");
+                    perfectCount++;
+                }
+
+                numberToCheck++; // move on to the next number
+                // TODO: Remove the next line later....
+                Console.WriteLine($"\t... currently checking {numberToCheck}");
+            }
+        }
+
+        private static void DemoFibonacci()
+        {
+            int position;
+            Console.Write("Enter a position in the sequence: ");
+            position = int.Parse(Console.ReadLine());
+            int fib = MathFormulas.FibonacciNumber(position);
+            Console.WriteLine($"The fibonacci number at {position} is {fib}.");
         }
     }
 }

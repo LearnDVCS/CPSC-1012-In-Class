@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic; // for the List<T> class
 
 namespace Looping
 {
@@ -58,5 +59,20 @@ namespace Looping
             }
             return perfect;
         }
-    }
+
+        public static List<int> FibonacciSequence(int length)
+        {
+            List<int> fib = new List<int>(); // create an empty list
+
+            if(length >= 1)
+            {
+                for(int index = 0; index < length; index ++)
+                {
+                    int fibNumber = FibonacciNumber(index + 1);
+                    fib.Add(fibNumber);
+                }
+            }
+            return fib; // send back the list of numbers
+        }
+    } // end of class
 }
