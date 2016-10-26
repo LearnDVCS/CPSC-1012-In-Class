@@ -40,5 +40,23 @@ namespace Looping
             }
             return card;
         }
+
+        private static Random _Rnd = new Random();
+        public void Shuffle()
+        {
+            if (!IsEmpty)
+            {
+                for (int counter = 0; counter < 500; counter++)
+                {
+                    // First, pick a spot to re-insert the card
+                    int index = _Rnd.Next(Cards.Count);
+                    // Second, remove a card from the deck
+                    PlayingCard card = Cards[0]; // Grab the top card
+                    Cards.Remove(card); // Cards.RemoveAt(0);
+                    // Third, re-insert the card
+                    Cards.Insert(index, card);
+                }
+            }
+        }
     }
 }

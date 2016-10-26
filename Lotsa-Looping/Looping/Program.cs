@@ -28,6 +28,10 @@ namespace Looping
             Console.WriteLine("A) MathFormulas.Fibonacci");
             Console.WriteLine("B) MathFormulas.IsPerfect");
             Console.WriteLine("C) MathFormulas.FibonacciSequence");
+            Console.WriteLine("D) MathFormulas.Factorial");
+            Console.WriteLine("E) Show a Deck of Cards");
+            Console.WriteLine("F) Shuffle a Deck of Cards");
+            Console.WriteLine("G) Play the game \"War\" with cards");
             // Others....
             Console.WriteLine("X) Exit");
             Console.WriteLine("\tSelect an item from the menu: ");
@@ -46,6 +50,31 @@ namespace Looping
                 case "C":
                     DemoFibonacciSequence();
                     break;
+                case "D":
+                    // TODO: Factorial Demo
+                    break;
+                case "E":
+                {
+                    DeckOfCards deck = new DeckOfCards();
+                    ShowCards(deck);
+                    break;
+                }
+                case "F":
+                {
+                    DeckOfCards deck = new DeckOfCards();
+                    deck.Shuffle();
+                    ShowCards(deck);
+                    break;
+                }
+            }
+        }
+
+        private static void ShowCards(DeckOfCards theDeck)
+        {
+            while(!theDeck.IsEmpty)
+            {
+                PlayingCard card = theDeck.DrawCard();
+                Console.WriteLine(card);
             }
         }
 
