@@ -28,6 +28,9 @@ namespace Looping
             Console.WriteLine("A) MathFormulas.Fibonacci");
             Console.WriteLine("B) MathFormulas.IsPerfect");
             Console.WriteLine("C) MathFormulas.Factorial");
+            Console.WriteLine("D) MathFormulas.FibonacciSequence");
+            Console.WriteLine("E) Brand new deck of cards");
+            Console.WriteLine("F) Shuffle a deck of cards");
             // Others...
             Console.WriteLine("X) Exit");
             Console.Write("\tSelect an item from the menu: ");
@@ -46,6 +49,29 @@ namespace Looping
                 case "C":
                     DemoFactorial();
                     break;
+                case "D":
+                    // Your homework;
+                    break;
+                case "E":
+                    DeckOfCards myDeck = new DeckOfCards();
+                    ShowDeck(myDeck);
+                    break;
+                case "F":
+                    myDeck = new DeckOfCards();
+                    myDeck.Shuffle();
+                    ShowDeck(myDeck);
+                    break;
+                case "G":
+                    break;
+            }
+        }
+
+        private static void ShowDeck(DeckOfCards deck)
+        {
+            while(!deck.IsEmpty)
+            {
+                PlayingCard aCard = deck.DrawCard();
+                Console.WriteLine(aCard);
             }
         }
 
