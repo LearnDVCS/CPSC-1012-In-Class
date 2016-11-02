@@ -51,6 +51,7 @@ namespace Looping
                     break;
                 case "D":
                     // Your homework;
+                    DemoFibonacciSequence();
                     break;
                 case "E":
                     DeckOfCards myDeck = new DeckOfCards();
@@ -64,6 +65,20 @@ namespace Looping
                 case "G":
                     break;
             }
+        }
+
+        private static void DemoFibonacciSequence()
+        {
+            /*
+            // display the first 10 numbers in the fibonacci sequence
+            List<int> sequence = MathFormulas.FibonacciSequence(10);
+            // Now, we are going to loop through all the items in the list
+            foreach (int number in sequence)
+                Console.Write($"{number}, ");
+            */
+            int[] sequence = MathFormulas.FibonacciArraySequence(10);
+            foreach (int number in sequence)
+                Console.Write($"{number}, ");
         }
 
         private static void ShowDeck(DeckOfCards deck)

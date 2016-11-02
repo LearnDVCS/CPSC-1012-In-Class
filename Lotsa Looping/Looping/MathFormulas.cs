@@ -74,5 +74,19 @@ namespace Looping
             }
             return fib; // send back the list of numbers
         }
+
+        public static int[] FibonacciArraySequence(int length)
+        {
+            int[] fib = new int[0]; // an "empty" array
+
+            if(length >= 1)
+            {
+                fib = new int[length]; // size of array = length
+                for (int index = 0; index < fib.Length; index++)
+                    fib[index] = FibonacciNumber(index + 1);
+            }
+
+            return fib;
+        }
     } // end of class
 }

@@ -46,6 +46,8 @@
     <Compile Include="DeckOfCards.cs" />
     <Compile Include="GameOfWar.cs" />
     <Compile Include="MathFormulas.cs" />
+    <Compile Include="PhoneBook.cs" />
+    <Compile Include="PhoneNumber.cs" />
     <Compile Include="Player.cs" />
     <Compile Include="PlayingCard.cs" />
     <Compile Include="Program.cs" />
