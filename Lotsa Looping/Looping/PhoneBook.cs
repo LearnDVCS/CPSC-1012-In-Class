@@ -53,5 +53,29 @@ namespace Looping
 
             return found;
         }
+
+        public PhoneNumber[] FindPhoneNumbersByLastName(string lastName)
+        {
+            PhoneNumber[] found = new PhoneNumber[Count];
+
+            // Find the numbers
+            int foundCounter = 0; // Logical size of the found results
+            for (int index = 0; index < Count; index++)
+            {
+                PhoneNumber item = Number[index]; // Get a reference to the item
+                if(item.LastName.Equals(lastName))
+                {
+                    found[foundCounter] = item; // append the item to the found array
+                    foundCounter++; // increment the logical size
+                }
+            }
+
+            // Trim the array
+            PhoneNumber[] foundTrimmed = new PhoneNumber[foundCounter];
+            for (int index = 0; index < foundCounter; index++)
+                foundTrimmed[index] = found[index]; // copy over item
+
+            return foundTrimmed;
+        }
     }
 }

@@ -67,6 +67,26 @@ namespace Looping
             }
         }
 
+        public static void DemoPhoneBook()
+        {
+            Console.WriteLine("\nPhone Book (Array Demo)");
+            // Creating a phone book and adding phone numbers
+            PhoneBook localVillage = new PhoneBook();
+            localVillage.AddPhoneNumber(new PhoneNumber("Bob", "Smith", "789-1234"));
+            localVillage.AddPhoneNumber(new PhoneNumber("Jim", "Smith", "789-1235"));
+            localVillage.AddPhoneNumber(new PhoneNumber("Sally", "Smith", "789-3695"));
+            localVillage.AddPhoneNumber(new PhoneNumber("Dan", "Gilligan", "789-9654"));
+            localVillage.AddPhoneNumber(new PhoneNumber("Gerald", "Klagenought", "789-7854"));
+            localVillage.AddPhoneNumber(new PhoneNumber("Wilma", "Hagglesworth", "789-5511"));
+
+            PhoneNumber[] relatives = localVillage.FindPhoneNumbersByLastName("Smith");
+            for (int index = 0; index < relatives.Length; index++)
+            {
+                PhoneNumber person = relatives[index];
+                Console.WriteLine($"{person.FirstName} {person.LastName} - {person.Number}");
+            }
+        }
+
         private static void DemoFibonacciSequence()
         {
             /*
