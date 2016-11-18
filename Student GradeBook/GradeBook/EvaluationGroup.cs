@@ -10,6 +10,32 @@ namespace GradeBook
         public string Name { get; set; }
         public int Weight { get; set; }
         public int? PassMark { get; set; }
-        public List<EvaluationComponent> Items { get; set; }
+        private List<EvaluationComponent> Items { get; set; }
+
+        public void AddEvaluationItem(EvaluationComponent item)
+        {
+            if (item == null)
+                throw new System.Exception("Evaluation Component cannot be null");
+            Items.Add(item);
+        }
+
+        public EvaluationComponent GetEvaluationItem(string name)
+        {
+            EvaluationComponent found = null;
+            foreach (var item in Items)
+                if (item.Name == name)
+                    found = item;
+            return found;
+        }
+
+        public List<string> ListGroupComponents()
+        {
+            List<string> results = new List<string>();
+
+            foreach (var item in Items)
+                results.Add(item.Name);
+
+            return results;
+        }
     }
 }
