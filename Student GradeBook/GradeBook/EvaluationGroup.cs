@@ -12,6 +12,13 @@ namespace GradeBook
         public int? PassMark { get; set; }
         private List<EvaluationComponent> Items { get; set; }
 
+        // Constructor
+        public EvaluationGroup()
+        {
+            // Set up the Items property as an empty list
+            Items = new List<EvaluationComponent>();
+        }
+
         public void AddEvaluationItem(EvaluationComponent item)
         {
             if (item == null)
