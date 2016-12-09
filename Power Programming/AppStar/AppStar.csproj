@@ -44,11 +44,23 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="CSVFileIO.cs" />
+    <Compile Include="MarathonRunner.cs" />
+    <Compile Include="MarathonRunnerFileIO.cs" />
+    <Compile Include="PhoneBookFileIO.cs" />
+    <Compile Include="PhoneNumberEntry.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Data\MarathonRunners.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Data\PhoneList_777475.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

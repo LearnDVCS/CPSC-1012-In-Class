@@ -9,6 +9,7 @@ namespace AppStar
 {
     // An abstract class can NOT be instantiated. Only sub-classes can be instantiated.
     public abstract class CSVFileIO<T>
+        : Loader<T> // This class implements the Loader<T> interface
     {
         #region Properties and Constructors
         public string FilePath { get; private set; }
@@ -16,13 +17,17 @@ namespace AppStar
         public CSVFileIO(string filePath)
         {
             FilePath = filePath;
+            // Info about where I am
+            Console.ForegroundColor = ConsoleColor.DarkYellow;
+            Console.WriteLine($"--Inside CSVFileIO(string) constructor--FilePath={FilePath}");
+            Console.ResetColor();
         }
         #endregion
 
         #region Public Methods
         public List<T> LoadData()
         {
-            throw new NotImplementedException();
+            return ReadAllLines();
         }
 
         public bool SaveData(List<T> data, bool append = false)
