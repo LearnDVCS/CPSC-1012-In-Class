@@ -1,5 +1,6 @@
 ﻿using System.Collections.Generic;
 using System.IO;
+using System; // for the Console class
 
 namespace AppStar
 {
@@ -20,6 +21,10 @@ namespace AppStar
         public CSVFileIO(string filePath)
         {
             FilePath = filePath;
+            // Info about where I am
+            Console.ForegroundColor = ConsoleColor.DarkYellow;
+            Console.WriteLine($"--Inside CSVFileIO(string) constructor--FilePath={FilePath}");
+            Console.ResetColor();
         }
         #endregion
 
